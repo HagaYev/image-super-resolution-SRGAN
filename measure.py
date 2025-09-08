@@ -33,7 +33,7 @@ def psnr_from_files(sr_path, hr_path):
     return psnr_value, status
 
 
-# דוגמה לשימוש:
+
 sr_path = r"SRCNN_HR_image.png"
 hr_path = r"Original_image.png"
 
