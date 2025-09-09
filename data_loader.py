@@ -14,7 +14,13 @@ def main() -> int:
     os.makedirs(data_dir, exist_ok=True)
 
     # Resolve how many images to download
-    count = number_of_img_in_data if number_of_img_in_data is not None else 200
+    if number_of_img_in_data is None:
+        try:
+            number_of_img_in_data = int(input("Choose how many images you want in your data: "))
+            number_of_img_in_data = int(number_of_img_in_data)
+        except Exception:
+            number_of_img_in_data = 200
+    count = number_of_img_in_data
 
     saved = 0
     for i, example in enumerate(ds):
