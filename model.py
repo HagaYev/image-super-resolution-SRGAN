@@ -1,13 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.utils.data import DataLoader
-import matplotlib.pyplot as plt
 from torchvision.models import vgg19, VGG19_Weights
-
-from dataset_maker import get_datasets
-
-
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -15,8 +9,6 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 vgg = vgg19(weights=VGG19_Weights.DEFAULT).features.eval().to(device)
 for param in vgg.parameters():
     param.requires_grad = False
-
-train_dataset, val_dataset = get_datasets()
 
 pixel_criterion = nn.L1Loss()
 lambda_perceptual = 0.01

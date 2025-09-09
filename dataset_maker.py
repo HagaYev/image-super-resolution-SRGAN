@@ -31,7 +31,7 @@ class CelebASRDataset(Dataset):
 
 def get_datasets():
     transform = transforms.Compose([transforms.ToTensor()])
-    full_dataset = CelebASRDataset("normal_resolution_images", "low_resolution_images", transform=transform)
+    full_dataset = CelebASRDataset(config.HR_dir, config.LR_dir, transform=transform)
 
     train_size = int(train_ratio * len(full_dataset))
     val_size = len(full_dataset) - train_size
