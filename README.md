@@ -9,6 +9,12 @@ PyTorch implementation of single-image super-resolution using SRGAN, combining p
 - Inference script to generate and visualize results
 ---
 
+# Results for 900 images in dataset, 50 EPOCHS: (Of course, for better results, more examples should be downloaded from the image database)
+
+<img width="1189" height="424" alt="הורדה (1)" src="https://github.com/user-attachments/assets/f8414782-eaaa-4429-8bcb-d62469b09adf" />
+
+<img width="1189" height="424" alt="הורדה" src="https://github.com/user-attachments/assets/78b96f55-36d7-4ee1-81af-44561d72bbdc" />
+
 # SRGAN Model – Architecture Overview
 ```
 config.py                # Global configuration (paths, ratios, epochs, batch size...)
@@ -61,10 +67,6 @@ README.md                # You are here
 - **Discriminator:** binary classification (real/fake)
 
 ---
-
-## Requirements
-- Python 3.9+ recommended
-- Windows, Linux, or macOS
 
 ## Quickstart
 ### 1) Download dataset
