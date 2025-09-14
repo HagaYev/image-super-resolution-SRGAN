@@ -1,11 +1,26 @@
+number_of_img_in_data =None
 
-number_of_img_in_data = None
-
+# Dataset paths
 HR_dir = "normal_resolution_images"
 LR_dir = "low_resolution_images"
-data_dir = "celeba_hq_256_subset"
+data_dir = "celeba-hq-256"
 
-train_ratio= 0.9
-lr=5e-4
-batch_size = 16
-num_epochs = 6
+# Training params
+train_ratio = 0.9
+batch_size = 10
+num_epochs = 5
+
+# Learning rates
+lr_G = 1e-4  # Generator
+lr_D = 1e-4  # Discriminator
+
+# Upscaling
+upscale_factor = 4
+
+# Losses
+use_vgg_loss = True
+lambda_perceptual = 0.01
+adversarial weight= 1e-3
+
+# Checkpoints
+save_model_interval = 1

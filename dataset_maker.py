@@ -5,7 +5,7 @@ from torch.utils.data import Dataset, random_split
 from torchvision import transforms
 import config
 
-train_ratio= config.train_ratio
+train_ratio = config.train_ratio
 
 class CelebASRDataset(Dataset):
     def __init__(self, hr_dir, lr_dir, transform=None):
@@ -19,8 +19,8 @@ class CelebASRDataset(Dataset):
         return len(self.hr_images)
 
     def __getitem__(self, idx):
-        hr_img = Image.open(os.path.join(self.hr_dir, self.hr_images[idx])).convert("L")
-        lr_img = Image.open(os.path.join(self.lr_dir, self.lr_images[idx])).convert("L")
+        hr_img = Image.open(os.path.join(self.hr_dir, self.hr_images[idx])).convert("RGB")
+        lr_img = Image.open(os.path.join(self.lr_dir, self.lr_images[idx])).convert("RGB")
 
         if self.transform:
             hr_img = self.transform(hr_img)
@@ -28,9 +28,8 @@ class CelebASRDataset(Dataset):
 
         return lr_img, hr_img
 
-
 def get_datasets():
-    transform = transforms.Compose([transforms.ToTensor()])
+    transform = transforms.ToTensor()
     full_dataset = CelebASRDataset(config.HR_dir, config.LR_dir, transform=transform)
 
     train_size = int(train_ratio * len(full_dataset))
@@ -38,7 +37,6 @@ def get_datasets():
     train_dataset, val_dataset = random_split(full_dataset, [train_size, val_size])
 
     return train_dataset, val_dataset
-
 
 if __name__ == "__main__":
     train_dataset, val_dataset = get_datasets()
