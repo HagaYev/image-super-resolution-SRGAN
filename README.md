@@ -9,7 +9,7 @@ PyTorch implementation of single-image super-resolution using SRGAN, combining p
 - Inference script to generate and visualize results
 ---
 
-# Results for 900 images in dataset, 50 EPOCHS: (Of course, for better results, more examples should be downloaded from the image database)
+# Results for 2000 images in dataset, 50 EPOCHS: (Of course, for better results, more examples should be downloaded from the image database)
 
 <img width="1189" height="424" alt="הורדה (1)" src="https://github.com/user-attachments/assets/1686b939-e312-41ba-8d3d-e7479d52ac7d" />
 
